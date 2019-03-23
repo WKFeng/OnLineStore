@@ -1,4 +1,4 @@
-package main.com.store.servlet;
+package main.com.store.web.base;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
