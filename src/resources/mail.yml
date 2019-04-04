@@ -1,0 +1,9 @@
+mail:
+  smtp:
+    host: localhost
+    auth: true
+  from:
+    username: admin@store.com
+    password: admin
+  subject: 在线商城账户激活邮件
+  content: 感谢您注册在线商城，请点击以下链接尽快激活账户:<a href='http://localhost:8080/OnLineStore/UserServlet?method=userActive&code=@'>http://localhost:8080/OnLineStore/UserServlet?method=userActive&code=@</a>

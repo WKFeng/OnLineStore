@@ -1,7 +1,5 @@
 package main.com.store.web.filter;
 
-import com.sun.deploy.net.HttpRequest;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +23,7 @@ public class BaseFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
 
     }
+
     class MyRequest extends HttpServletRequestWrapper {
         private HttpServletRequest request;
 
