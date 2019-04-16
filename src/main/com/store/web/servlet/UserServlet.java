@@ -8,6 +8,7 @@ import main.com.store.web.base.BaseServlet;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 import org.apache.commons.beanutils.converters.DateConverter;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -60,9 +61,31 @@ public class UserServlet extends BaseServlet {
     public String loginUI(HttpServletRequest request, HttpServletResponse response) {
         return "/jsp/login.jsp";
     }
-    public String userLogin(HttpServletRequest request,HttpServletResponse response){
-        String autoLogin=request.getParameter("autoLogin");
-        System.out.println(autoLogin);
-        return null;
+
+    public String userLogin(HttpServletRequest request, HttpServletResponse response) {
+        //String autoLogin = request.getParameter("autoLogin");
+        String userName=request.getParameter("username");
+        String password=request.getParameter("password");
+        System.out.println(userName+"  "+password);
+        try {
+            User user=userService.userLogin(userName,password);
+            if(user!=null){
+                request.getSession().setAttribute("loginUser",user);
+                return "/jsp/index.jsp";
+            }else{
+                request.setAttribute("msg","用户名不存在或密码错误");
+                return "/jsp/login.jsp";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("msg","系统异常,请稍后重试");
+            return "/jsp/login.jsp";
+        }
+    }
+    public String userLogout(HttpServletRequest request,HttpServletResponse response){
+        User user=(User) request.getSession().getAttribute("loginUser");
+        if(user!=null)
+            request.getSession().setAttribute("loginUser",null);
+        return "/jsp/index.jsp";
     }
 }

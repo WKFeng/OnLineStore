@@ -19,6 +19,7 @@
           <element id="library" level="project" name="com.sun.mail:javax.mail:1.4.5" />
           <element id="library" level="project" name="mysql:mysql-connector-java:5.1.46" />
           <element id="library" level="project" name="mchange-commons-java-0.2.3" />
+          <element id="library" level="project" name="json-lib-2.4-jdk15" />
         </element>
       </element>
     </root>

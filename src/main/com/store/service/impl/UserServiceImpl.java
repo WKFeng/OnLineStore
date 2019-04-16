@@ -34,4 +34,9 @@ public class UserServiceImpl implements UserService {
         userDao.updateUser(user);
     }
 
+    @Override
+    public User userLogin(String userName, String password) throws Exception {
+        return userDao.userLogin(userName,password);
+    }
+
 }
