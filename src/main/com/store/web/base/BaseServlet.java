@@ -12,7 +12,7 @@ public class BaseServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String methodName = req.getParameter("method");
-        if (methodName.equals("") || methodName == null) {
+        if (methodName == null||methodName.equals("") ) {
             methodName = "execute";
         }
         Class clazz = this.getClass();

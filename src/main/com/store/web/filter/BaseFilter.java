@@ -41,7 +41,9 @@ public class BaseFilter implements Filter {
                 //get请求
                 String value = request.getParameter(name);
                 try {
-                    value = new String(value.getBytes("iso-8859-1"), "utf-8");
+                    if(value!=null){
+                        value = new String(value.getBytes("iso-8859-1"), "utf-8");
+                    }
                     return value;
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
@@ -69,7 +71,9 @@ public class BaseFilter implements Filter {
                     for (String key : map.keySet()) {
                         String[] values = map.get(key);
                         for (String value : values) {
-                            value = new String(value.getBytes("iso-8859-1"), "utf-8");
+                            if(value!=null){
+                                value = new String(value.getBytes("iso-8859-1"), "utf-8");
+                            }
                         }
                         newMap.put(key, values);
                     }

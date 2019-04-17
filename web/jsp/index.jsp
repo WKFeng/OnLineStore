@@ -251,5 +251,11 @@
     <%@include file="footer.jsp" %>
 </div>
 </body>
+<script type="text/javascript">
+    $(function () {
+       $.post("/categoryServlet",function (data) {
 
+       },"json");
+    });
+</script>
 </html>
