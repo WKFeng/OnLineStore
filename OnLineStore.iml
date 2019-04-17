@@ -31,6 +31,25 @@
     <orderEntry type="library" name="com.sun.mail:javax.mail:1.4.5" level="project" />
     <orderEntry type="library" name="mysql:mysql-connector-java:5.1.46" level="project" />
     <orderEntry type="library" name="mchange-commons-java-0.2.3" level="project" />
-    <orderEntry type="library" name="json-lib-2.4-jdk15" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://F:/StudyFiles/01.最新整理49期JAVA基础加就业班全套视频主要看/21.阶段项目(必看)-电子商务企业实战项目(共61集)/02.项目用户登录-首页分类/源码笔记/resource/json工具/json jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://F:/StudyFiles/01.最新整理49期JAVA基础加就业班全套视频主要看/21.阶段项目(必看)-电子商务企业实战项目(共61集)/02.项目用户登录-首页分类/源码笔记/resource/json工具/json jar" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://F:/StudyFiles/01.最新整理49期JAVA基础加就业班全套视频主要看/21.阶段项目(必看)-电子商务企业实战项目(共61集)/02.项目用户登录-首页分类/源码笔记/resource/jedis工具/jedis" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://F:/StudyFiles/01.最新整理49期JAVA基础加就业班全套视频主要看/21.阶段项目(必看)-电子商务企业实战项目(共61集)/02.项目用户登录-首页分类/源码笔记/resource/jedis工具/jedis" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

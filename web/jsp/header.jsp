@@ -62,16 +62,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">首页</a>
+                <a class="navbar-brand" href="${pageContext.request.contextPath}">首页</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <c:forEach items="${category}" var="item">
-                        <li class="active"><a href="${pageContext.request.contextPath}/jsp/product_list.jsp">${item.cname}<span
-                                class="sr-only">(current)</span></a></li>
-                    </c:forEach>
+                <ul class="nav navbar-nav" id="categoryUl">
+                    <%--<c:forEach items="${category}" var="item">--%>
+                        <%--<li class="active"><a href="${pageContext.request.contextPath}/jsp/product_list.jsp">${item.cname}<span--%>
+                                <%--class="sr-only">(current)</span></a></li>--%>
+                    <%--</c:forEach>--%>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
@@ -87,4 +87,18 @@
     </nav>
 </div>
 </body>
+<script type="text/javascript">
+    <%--第二种方式:异步从数据库里面加载分类
+        弊端,当多次刷新首页时就会多次从数据库中获取分类信息,给数据库增加压力,因此也不再采用这种方式
+    --%>
+    $(function () {
+        $.post("http://localhost:8080/${pageContext.request.contextPath}/categoryServlet",{"method":"findAllCategories"},function (data) {
+            $.each(data,function (i,n) {
+                var li="<li class='active'><a href=\'${pageContext.request.contextPath}/productServlet?method="+
+                    "findProductsByCategoryWithPage&num=1&cid="+n.cid+"'>"+n.cname+"</a></li>";
+                $("#categoryUl").append(li);
+            })
+        },"json");
+    });
+</script>
 </html>

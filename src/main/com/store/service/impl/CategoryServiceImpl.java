@@ -4,6 +4,8 @@ import main.com.store.dao.CategoryDao;
 import main.com.store.dao.impl.CategoryDaoImpl;
 import main.com.store.domain.Category;
 import main.com.store.service.CategoryService;
+import main.com.store.utils.JedisUtils;
+import redis.clients.jedis.Jedis;
 
 import java.util.List;
 
